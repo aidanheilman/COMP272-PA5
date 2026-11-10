@@ -184,12 +184,6 @@ public class ProbeHashMap<K, V> {
     }
 
     /*
-     * TODO: Explain the role of tombstones:
-     * - How does a tombstone differ from a never-used slot?
-     * - Why can replacing a deleted key with null break searches?
-     * - How do searches and insertions handle tombstones?
-     * Include a short example with colliding keys and a deletion.
-     * 
      * Explaination of tombstones:
      * 
      * A tombstone is a special value used to replace a deleted node (i.e. AVAILABLE, -1, "T")
@@ -227,8 +221,6 @@ public class ProbeHashMap<K, V> {
      * Because search() is programmed to treat the tombstone as though it were a key, search(c) will do this:
      * Check keys[0], then check keys[0+1], then check keys[0+2], keys[2] is a match to c, this result is 
      * correctly returned, and the tombstone still allows for a new key to be inserted there later.
-     * 
-     * 
      * 
      */
     
